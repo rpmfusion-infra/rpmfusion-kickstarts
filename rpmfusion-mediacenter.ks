@@ -3,8 +3,8 @@
 # mailto:rpmfusion-developers@lists.rpmfusion.org
 
 %include /usr/share/spin-kickstarts/fedora-live-base.ks
-%include /usr/share/spin-kickstarts/rpmfusion-free-live-base.ks
-%include /usr/share/spin-kickstarts/rpmfusion-nonfree-live-base.ks
+%include /usr/share/rpmfusion-free-remix-kickstarts/rpmfusion-free-live-base.ks
+%include /usr/share/rpmfusion-nonfree-remix-kickstarts/rpmfusion-nonfree-live-base.ks
 
 services --disabled="network" --enabled="sshd,NetworkManager,ModemManager"
 part / --fstype="ext4" --size=8192
