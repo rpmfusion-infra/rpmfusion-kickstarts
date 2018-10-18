@@ -47,7 +47,6 @@ rpmfusion-nonfree-release
 ## From Fedora
 initial-setup
 initial-setup-gui
-chromium
 dvb-apps
 libva-utils
 libva-vdpau-driver
@@ -62,7 +61,7 @@ w_scan
 -reiserfs-utils
 
 ## From RPM Fusion - Free
-chromium-libs-media-freeworld
+chromium-vaapi
 comskip
 ffmpeg
 freetype-freeworld
