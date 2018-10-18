@@ -4,7 +4,13 @@
 
 %include /usr/share/spin-kickstarts/fedora-live-base.ks
 %include /usr/share/rpmfusion-free-remix-kickstarts/rpmfusion-free-live-base.ks
+#include /usr/share/rpmfusion-free-remix-kickstarts/rpmfusion-free-tainted.ks
 %include /usr/share/rpmfusion-nonfree-remix-kickstarts/rpmfusion-nonfree-live-base.ks
+#include /usr/share/rpmfusion-nonfree-remix-kickstarts/rpmfusion-nonfree-tainted.ks
+
+repo --name=rpmfusion-free-tainted --mirrorlist=https://mirrors.rpmfusion.org/mirrorlist?repo=free-fedora-tainted-$releasever&arch=$basearch
+repo --name=rpmfusion-nonfree-tainted --mirrorlist=https://mirrors.rpmfusion.org/mirrorlist?repo=nonfree-fedora-tainted-$releasever&arch=$basearch
+
 
 services --disabled="network" --enabled="sshd,NetworkManager,ModemManager"
 part / --fstype="ext4" --size=8192
@@ -39,6 +45,8 @@ rpmfusion-nonfree-release
 
 # Packages
 ## From Fedora
+initial-setup
+initial-setup-gui
 chromium
 dvb-apps
 libva-utils
@@ -55,7 +63,7 @@ w_scan
 
 ## From RPM Fusion - Free
 chromium-libs-media-freeworld
-#comskip
+comskip
 ffmpeg
 freetype-freeworld
 fuse-exfat
@@ -124,6 +132,17 @@ fdkaac
 gstreamer1-plugins-bad-nonfree
 unrar
 
+## From RPM Fusion - Free - Tained
+rpmfusion-free-release-tainted
+libdvdcss
+
+## From RPM Fusion - NonFree - Tainted
+rpmfusion-nonfree-release-tainted
+b43-firmware
+broadcom-bt-firmware
+dvb-firmware
+nouveau-firmware
+
 %end
 
 %post
@@ -135,4 +154,5 @@ autologin-user-timeout=0
 EOF
 
 systemctl set-default graphical.target
+systemctl enable cockpit.socket
 %end
