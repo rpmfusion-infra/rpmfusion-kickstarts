@@ -147,9 +147,11 @@ nouveau-firmware
 %post
 # set up auto-login
 cat > /etc/lightdm/lightdm.conf.d/50-autologin.conf<<EOF
-[SeatDefaults]
+[Seat:*]
+type=local
 autologin-user=liveuser
 autologin-user-timeout=0
+autologin-session=kodi
 EOF
 
 systemctl set-default graphical.target
