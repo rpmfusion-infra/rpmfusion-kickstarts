@@ -61,10 +61,9 @@ w_scan
 -reiserfs-utils
 
 ## From RPM Fusion - Free
-chromium-vaapi
+chromium-freeworld
 comskip
 ffmpeg
-freetype-freeworld
 fuse-exfat
 get-flash-videos
 get_iplayer
@@ -129,6 +128,7 @@ zoneminder
 ## From RPM Fusion - NonFree
 fdkaac
 gstreamer1-plugins-bad-nonfree
+intel-media-driver
 unrar
 
 ## From RPM Fusion - Free - Tained
